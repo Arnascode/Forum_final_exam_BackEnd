@@ -1,0 +1,34 @@
+###
+GET http://localhost:3000
+
+###
+POST http://localhost:3000/api/register
+Content-Type: application/json
+
+{
+"fullName": "ben zero",
+"email": "ben@zeroppp.com",
+"password": "123456"
+}
+
+###
+POST http://localhost:3000/api/login
+Content-Type: application/json
+
+{
+"email": "ben@zeroppp.com",
+"password": "123456"
+}
+
+###
+GET http://localhost:3000/api/question
+
+###
+POST http://localhost:3000/api/question
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsImlhdCI6MTY1ODg0NDM5MywiZXhwIjoxNjU4ODQ3OTkzfQ._8sDHBapzSx593icOslMi4N8vTfqcKo0w_OVUsO3C4w
+Content-Type: application/json
+
+{
+  "title":"carryadfsfdsfsr",
+  "content":"very badsfasfsaf"
+}
