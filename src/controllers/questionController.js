@@ -1,5 +1,29 @@
 /* eslint-disable object-curly-newline */
-const { saveQuest, getQuestDB, updateQuest, delQuest } = require('../model/questionModel');
+const {
+  saveQuest,
+  getQuestDB,
+  updateQuest,
+  delQuest,
+  saveAnswer,
+  getAnswerDB,
+} = require('../model/questionModel');
+
+async function addAnswer(req, res) {
+  const { answer } = req.body;
+  //  , user_id
+  const idFromToken = req.userId;
+  try {
+    const saveResult = await saveAnswer(answer, idFromToken);
+    if (saveResult.affectedRows === 1) {
+      res.sendStatus(201);
+      return;
+    }
+    res.status(400).json('Cant add answer');
+  } catch (error) {
+    console.log('error in Quest ===', error);
+    res.sendStatus(500);
+  }
+}
 
 async function addQuest(req, res) {
   const { title, content } = req.body;
@@ -58,9 +82,21 @@ async function showQuest(req, res) {
   }
 }
 
+async function showAnswer(req, res) {
+  try {
+    const artArr = await getAnswerDB();
+    res.json(artArr);
+  } catch (error) {
+    console.log('questRoutes error ===', error);
+    res.sendStatus(500);
+  }
+}
+
 module.exports = {
   addQuest,
   showQuest,
   changeQuest,
   deleteQuest,
+  addAnswer,
+  showAnswer,
 };

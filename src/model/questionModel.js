@@ -21,9 +21,22 @@ function delQuest(id) {
   return executeDb(sql, [id]);
 }
 
+function getAnswerDB() {
+  // const sql = 'SELECT questions.id FROM questions LEFT JOIN answers ON questions.id=answers.id';
+  const sql1 = 'SELECT * FROM answers WHERE questions.id  = answers.question_id';
+  return executeDb(sql1);
+}
+
+function saveAnswer(answer, question_id, user_id) {
+  const sql = 'INSERT INTO answers (answer, question_id, user_id ) VALUES (?, ?, ?)';
+  return executeDb(sql, [answer, question_id, user_id]);
+}
+
 module.exports = {
   saveQuest,
   getQuestDB,
   updateQuest,
   delQuest,
+  saveAnswer,
+  getAnswerDB,
 };

@@ -13,4 +13,8 @@ questRoutes.patch('/question/:id', validateToken, controller.changeQuest);
 
 questRoutes.delete('/question/:id', validateToken, controller.deleteQuest);
 
+questRoutes.get('/question/:id/answers', validateToken, controller.showAnswer);
+
+questRoutes.post('/question/:id/answers', validateToken, controller.addAnswer);
+
 module.exports = questRoutes;

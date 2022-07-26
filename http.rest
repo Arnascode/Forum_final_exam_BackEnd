@@ -25,12 +25,12 @@ GET http://localhost:3000/api/question
 
 ###
 POST http://localhost:3000/api/question
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsImlhdCI6MTY1ODg0NDM5MywiZXhwIjoxNjU4ODQ3OTkzfQ._8sDHBapzSx593icOslMi4N8vTfqcKo0w_OVUsO3C4w
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsImlhdCI6MTY1ODg1NDkxMiwiZXhwIjoxNjU4ODU4NTEyfQ.g0CWAn0rLLSUVQrwupx6cRFw6jlXayK-PMUkymW-L-w
 Content-Type: application/json
 
 {
-  "title":"trail11",
-  "content":"very badsfasfsaf"
+  "title":"trail112",
+  "content":"very normal"
 }
 ###
 PATCH  http://localhost:3000/api/question/11
@@ -45,4 +45,18 @@ Content-Type: application/json
 DELETE http://localhost:3000/api/question/11
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsImlhdCI6MTY1ODg0OTIxOSwiZXhwIjoxNjU4ODUyODE5fQ.hwvOngoD2EE-4415_n6tvxjdOqr1Ux-XCGqzAwqrodo
 Content-Type: application/json
+
+###
+GET http://localhost:3000/api/question/1/answers
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsImlhdCI6MTY1ODg1NjE1NSwiZXhwIjoxNjU4ODU5NzU1fQ.yUGn-doJaUS7Bw2XNiCmQFDITJeRcJOgK5QNuJwAv5A
+Content-Type: application/json
+
+###
+POST http://localhost:3000/api/question/9/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsImlhdCI6MTY1ODg0OTIxOSwiZXhwIjoxNjU4ODUyODE5fQ.hwvOngoD2EE-4415_n6tvxjdOqr1Ux-XCGqzAwqrodo
+Content-Type: application/json
+
+{
+  "answer":"very normal"
+}
 
