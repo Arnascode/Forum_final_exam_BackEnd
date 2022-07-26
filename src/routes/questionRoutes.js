@@ -9,4 +9,8 @@ questRoutes.post('/question', validateToken, controller.addQuest);
 
 questRoutes.get('/question', controller.showQuest);
 
+questRoutes.patch('/question/:id', validateToken, controller.changeQuest);
+
+questRoutes.delete('/question/:id', validateToken, controller.deleteQuest);
+
 module.exports = questRoutes;

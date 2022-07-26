@@ -29,6 +29,20 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsImlhd
 Content-Type: application/json
 
 {
-  "title":"carryadfsfdsfsr",
+  "title":"trail11",
   "content":"very badsfasfsaf"
 }
+###
+PATCH  http://localhost:3000/api/question/11
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsImlhdCI6MTY1ODg0OTIxOSwiZXhwIjoxNjU4ODUyODE5fQ.hwvOngoD2EE-4415_n6tvxjdOqr1Ux-XCGqzAwqrodo
+Content-Type: application/json
+
+{
+  "title":"carry on my guy",
+  "content":"very not nicepice"
+}
+###
+DELETE http://localhost:3000/api/question/11
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsImlhdCI6MTY1ODg0OTIxOSwiZXhwIjoxNjU4ODUyODE5fQ.hwvOngoD2EE-4415_n6tvxjdOqr1Ux-XCGqzAwqrodo
+Content-Type: application/json
+
