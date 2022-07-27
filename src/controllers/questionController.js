@@ -13,7 +13,8 @@ async function addAnswer(req, res) {
   //  , user_id
   const idFromToken = req.userId;
   try {
-    const saveResult = await saveAnswer(answer, idFromToken);
+    const { id } = req.params;
+    const saveResult = await saveAnswer(answer, id, idFromToken);
     if (saveResult.affectedRows === 1) {
       res.sendStatus(201);
       return;

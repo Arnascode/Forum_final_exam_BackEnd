@@ -41,6 +41,34 @@ async function validateLogin(req, res, next) {
   }
 }
 
+async function validateQuest(req, res, next) {
+  const schema = Joi.object({
+    title: Joi.string().min(3).max(25).required(),
+    content: Joi.string().trim().max(600).required(),
+  });
+
+  try {
+    await schema.validateAsync(req.body, { abortEarly: false });
+    next();
+  } catch (error) {
+    console.log('schema.validateAsync===', error);
+    res.status(400).json(error.details);
+  }
+}
+async function validateAnswer(req, res, next) {
+  const schema = Joi.object({
+    answer: Joi.string().min(3).max(800).required(),
+  });
+
+  try {
+    await schema.validateAsync(req.body, { abortEarly: false });
+    next();
+  } catch (error) {
+    console.log('schema.validateAsync===', error);
+    res.status(400).json(error.details);
+  }
+}
+
 async function validateToken(req, res, next) {
   const tokenFromHeaders = req.headers.authorization?.split(' ')[1];
   if (!tokenFromHeaders) {
@@ -68,4 +96,6 @@ module.exports = {
   validateRegister,
   validateToken,
   validateLogin,
+  validateQuest,
+  validateAnswer,
 };

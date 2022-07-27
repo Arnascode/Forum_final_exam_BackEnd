@@ -22,9 +22,9 @@ function delQuest(id) {
 }
 
 function getAnswerDB() {
-  // const sql = 'SELECT questions.id FROM questions LEFT JOIN answers ON questions.id=answers.id';
-  const sql1 = 'SELECT * FROM answers WHERE questions.id  = answers.question_id';
-  return executeDb(sql1);
+  const sql = 'SELECT questions.id FROM questions LEFT JOIN answers ON answers.question_id=answer';
+  // const sql1 = 'SELECT * FROM answers AND questions WHERE questions.id  = answers.question_id';
+  return executeDb(sql);
 }
 
 function saveAnswer(answer, question_id, user_id) {
