@@ -6,7 +6,7 @@ function updateAnswer(answer, id) {
 }
 
 function delAnswer(id) {
-  const sql = 'DELETE FROM answers WHERE id = ?';
+  const sql = 'DELETE FROM answers WHERE id = ? LIMIT 1';
   return executeDb(sql, [id]);
 }
 

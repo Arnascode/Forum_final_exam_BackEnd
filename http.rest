@@ -42,7 +42,7 @@ Content-Type: application/json
   "content":"very not nicepice"
 }
 ###
-DELETE http://localhost:3000/api/question/8
+DELETE http://localhost:3000/api/question/4
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsImlhdCI6MTY1ODkyNDIzNywiZXhwIjoxNjU4OTI3ODM3fQ.9CojfSYZit0b-4cy4FXMRhc3t8wya2d0SdDi78VCsT0
 Content-Type: application/json
 
@@ -66,10 +66,10 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsImlhd
 Content-Type: application/json
 
 {
-  "answer":"working"
+  "answer":"working nice"
 }
 ###
-DELETE http://localhost:3000/api/answers/10
+DELETE http://localhost:3000/api/answers/6
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsImlhdCI6MTY1ODkyNDIzNywiZXhwIjoxNjU4OTI3ODM3fQ.9CojfSYZit0b-4cy4FXMRhc3t8wya2d0SdDi78VCsT0
 Content-Type: application/json
 

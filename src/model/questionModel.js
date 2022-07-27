@@ -17,7 +17,7 @@ function updateQuest(title, content, id) {
 }
 
 function delQuest(id) {
-  const sql = 'DELETE FROM questions WHERE id = ?';
+  const sql = 'DELETE FROM questions WHERE id = ? LIMIT 1';
   return executeDb(sql, [id]);
 }
 
