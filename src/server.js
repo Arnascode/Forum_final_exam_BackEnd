@@ -5,6 +5,7 @@ const cors = require('cors');
 const { PORT } = require('./config');
 const userRoutes = require('./routes/userRoute');
 const questRoutes = require('./routes/questionRoutes');
+const answerRoutes = require('./routes/answerRoutes');
 
 const app = express();
 
@@ -20,6 +21,7 @@ app.get('/', (req, res) => {
 // Routes
 app.use('/api', userRoutes);
 app.use('/api', questRoutes);
+app.use('/api', answerRoutes);
 
 app.all('*', (req, res) => {
   res.status(400).json({ error: 'page not found' });

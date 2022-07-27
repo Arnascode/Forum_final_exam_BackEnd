@@ -60,3 +60,17 @@ Content-Type: application/json
   "answer":"vet"
 }
 
+###
+PATCH  http://localhost:3000/api/answers/9
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsImlhdCI6MTY1ODkyNzIzNCwiZXhwIjoxNjU4OTMwODM0fQ.lTesaXVNvuOEUZ2p3uHBHGDeVVYU17y1FQfVzzauT3U
+Content-Type: application/json
+
+{
+  "answer":"working"
+}
+###
+DELETE http://localhost:3000/api/answers/10
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsImlhdCI6MTY1ODkyNDIzNywiZXhwIjoxNjU4OTI3ODM3fQ.9CojfSYZit0b-4cy4FXMRhc3t8wya2d0SdDi78VCsT0
+Content-Type: application/json
+
+###
