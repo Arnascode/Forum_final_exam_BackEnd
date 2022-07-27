@@ -26,6 +26,17 @@ async function addAnswer(req, res) {
   }
 }
 
+async function showAnswer(req, res) {
+  const id = req.params;
+  try {
+    const artArr = await getAnswerDB(id);
+    res.json(artArr);
+  } catch (error) {
+    console.log('questRoutes error ===', error);
+    res.sendStatus(500);
+  }
+}
+
 async function addQuest(req, res) {
   const { title, content } = req.body;
   //  , user_id
@@ -76,16 +87,6 @@ async function deleteQuest(req, res) {
 async function showQuest(req, res) {
   try {
     const artArr = await getQuestDB();
-    res.json(artArr);
-  } catch (error) {
-    console.log('questRoutes error ===', error);
-    res.sendStatus(500);
-  }
-}
-
-async function showAnswer(req, res) {
-  try {
-    const artArr = await getAnswerDB();
     res.json(artArr);
   } catch (error) {
     console.log('questRoutes error ===', error);

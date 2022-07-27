@@ -42,21 +42,21 @@ Content-Type: application/json
   "content":"very not nicepice"
 }
 ###
-DELETE http://localhost:3000/api/question/9
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsImlhdCI6MTY1ODkxMzkwMCwiZXhwIjoxNjU4OTE3NTAwfQ.BiuA-ZCAPMN5V0e3h8n7rqnpc6a8MknlKWwG1qKB3qc
+DELETE http://localhost:3000/api/question/8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsImlhdCI6MTY1ODkyNDIzNywiZXhwIjoxNjU4OTI3ODM3fQ.9CojfSYZit0b-4cy4FXMRhc3t8wya2d0SdDi78VCsT0
 Content-Type: application/json
 
 ###
 GET http://localhost:3000/api/question/1/answers
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsImlhdCI6MTY1ODkxMzkwMCwiZXhwIjoxNjU4OTE3NTAwfQ.BiuA-ZCAPMN5V0e3h8n7rqnpc6a8MknlKWwG1qKB3qc
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsImlhdCI6MTY1ODkyNDIzNywiZXhwIjoxNjU4OTI3ODM3fQ.9CojfSYZit0b-4cy4FXMRhc3t8wya2d0SdDi78VCsT0
 Content-Type: application/json
 
 ###
 POST http://localhost:3000/api/question/3/answers
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsImlhdCI6MTY1ODkxMzkwMCwiZXhwIjoxNjU4OTE3NTAwfQ.BiuA-ZCAPMN5V0e3h8n7rqnpc6a8MknlKWwG1qKB3qc
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsImlhdCI6MTY1ODkyNDIzNywiZXhwIjoxNjU4OTI3ODM3fQ.9CojfSYZit0b-4cy4FXMRhc3t8wya2d0SdDi78VCsT0
 Content-Type: application/json
 
 {
-  "answer":"ve"
+  "answer":"vet"
 }
 

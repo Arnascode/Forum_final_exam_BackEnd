@@ -21,10 +21,12 @@ function delQuest(id) {
   return executeDb(sql, [id]);
 }
 
-function getAnswerDB() {
-  const sql = 'SELECT questions.id FROM questions LEFT JOIN answers ON answers.question_id=answer';
+function getAnswerDB(id) {
+  // const sql = 'SELECT answers.answ
+  // er FROM answers LEFT JOIN questions ON answers.question_id = questions.id';
   // const sql1 = 'SELECT * FROM answers AND questions WHERE questions.id  = answers.question_id';
-  return executeDb(sql);
+  const sql = `SELECT * FROM answers WHERE question_id=${id.id} `;
+  return executeDb(sql, [id]);
 }
 
 function saveAnswer(answer, question_id, user_id) {
