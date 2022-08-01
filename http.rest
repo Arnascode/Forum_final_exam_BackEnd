@@ -28,7 +28,7 @@ GET http://localhost:3090/api/questionasc
 GET http://localhost:3090/api/questiondesc
 
 ###
-GET http://localhost:3090/api/answerdesc
+GET http://localhost:3090/api/answercount
 
 ###
 GET http://localhost:3090/api/answerasc

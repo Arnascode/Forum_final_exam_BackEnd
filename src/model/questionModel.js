@@ -18,11 +18,11 @@ function getQuestDesc() {
   return executeDb(sql);
 }
 function getAnswerDesc() {
-  const sql = 'SELECT COUNT(question_id), answer FROM answers GROUP BY answer ORDER BY COUNT(question_id) DESC';
+  const sql = 'SELECT COUNT(id), question_id FROM answers GROUP BY question_id ORDER BY COUNT(id)';
   return executeDb(sql);
 }
 function getAnswerAsc() {
-  const sql = 'SELECT * FROM questions ORDER BY edit DESC';
+  const sql = 'SELECT COUNT(id), question_id FROM answers GROUP BY question_id ORDER BY COUNT(id) ASC';
   return executeDb(sql);
 }
 
