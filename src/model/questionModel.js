@@ -6,6 +6,26 @@ function getQuestDB() {
   return executeDb(sql);
 }
 
+function getQuestAsc() {
+  // const sql = 'SELECT COUNT (*) FROM questions GROUP BY MINUTE(edit)';
+  // const sql = 'SELECT date(timestamp, %i) count(1) FROM questions GROUP BY 1';
+  // const sql = 'SELECT COUNT(edit)content FROM questions GROUP BY edit ORDER BY COUNT(edit) DESC';
+  const sql = 'SELECT * FROM questions ORDER BY edit ASC';
+  return executeDb(sql);
+}
+function getQuestDesc() {
+  const sql = 'SELECT * FROM questions ORDER BY edit DESC';
+  return executeDb(sql);
+}
+function getAnswerDesc() {
+  const sql = 'SELECT COUNT(question_id), answer FROM answers GROUP BY answer ORDER BY COUNT(question_id) DESC';
+  return executeDb(sql);
+}
+function getAnswerAsc() {
+  const sql = 'SELECT * FROM questions ORDER BY edit DESC';
+  return executeDb(sql);
+}
+
 function saveQuest(title, content, user_id) {
   const sql = 'INSERT INTO questions (title, content, user_id ) VALUES (?, ?, ?)';
   return executeDb(sql, [title, content, user_id]);
@@ -22,9 +42,6 @@ function delQuest(id) {
 }
 
 function getAnswerDB(id) {
-  // const sql = 'SELECT answers.answ
-  // er FROM answers LEFT JOIN questions ON answers.question_id = questions.id';
-  // const sql1 = 'SELECT * FROM answers AND questions WHERE questions.id  = answers.question_id';
   const sql = `SELECT * FROM answers WHERE question_id=${id.id} `;
   return executeDb(sql, [id]);
 }
@@ -41,4 +58,8 @@ module.exports = {
   delQuest,
   saveAnswer,
   getAnswerDB,
+  getQuestAsc,
+  getQuestDesc,
+  getAnswerDesc,
+  getAnswerAsc,
 };

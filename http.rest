@@ -22,23 +22,33 @@ Content-Type: application/json
 
 ###
 GET http://localhost:3000/api/question
+###
+GET http://localhost:3090/api/questionasc
+###
+GET http://localhost:3090/api/questiondesc
 
 ###
-POST http://localhost:3000/api/question
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsImlhdCI6MTY1ODkxMzUzNCwiZXhwIjoxNjU4OTE3MTM0fQ.wtfmwgHMwv86tYAQDZ4Z7swU64nR022ZzfrMFVgApTc
+GET http://localhost:3090/api/answerdesc
+
+###
+GET http://localhost:3090/api/answerasc
+
+###
+POST http://localhost:3090/api/question
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsImlhdCI6MTY1OTA3OTcyNiwiZXhwIjoxNjU5MDgzMzI2fQ.iMxd9UNOXr571xVPasg-KHSJ2EeADP3VpYVWStHn15k
 Content-Type: application/json
 
 {
-  "title":"tr",
+  "title":"trss",
   "content":"normal"
 }
 ###
-PATCH  http://localhost:3000/api/question/9
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsImlhdCI6MTY1ODkxMzUzNCwiZXhwIjoxNjU4OTE3MTM0fQ.wtfmwgHMwv86tYAQDZ4Z7swU64nR022ZzfrMFVgApTc
+PATCH  http://localhost:3090/api/question/55
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsImlhdCI6MTY1OTA3OTcyNiwiZXhwIjoxNjU5MDgzMzI2fQ.iMxd9UNOXr571xVPasg-KHSJ2EeADP3VpYVWStHn15k
 Content-Type: application/json
 
 {
-  "title":"ca",
+  "title":"carr",
   "content":"very not nicepice"
 }
 ###
