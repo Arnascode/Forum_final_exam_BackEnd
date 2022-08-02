@@ -13,9 +13,11 @@ questRoutes.get('/questionasc', controller.showQuestAsc);
 
 questRoutes.get('/questiondesc', controller.showQuestDesc);
 
-questRoutes.get('/answercount', controller.showAnswerDesc);
+questRoutes.get('/answerdesc', controller.showAnswerDesc);
 
-// questRoutes.get('/answerasc', controller.showAnswerAsc);
+questRoutes.get('/answerasc', controller.showAnswerAsc);
+
+questRoutes.get('/answerquest', controller.showAnswerAsc);
 
 questRoutes.patch('/question/:id', validateToken, validateQuest, controller.changeQuest);
 

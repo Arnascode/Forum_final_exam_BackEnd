@@ -18,11 +18,43 @@ function getQuestDesc() {
   return executeDb(sql);
 }
 function getAnswerDesc() {
-  const sql = 'SELECT COUNT(id), question_id FROM answers GROUP BY question_id ORDER BY COUNT(id)';
+  const sql = `SELECT
+  questions.id,
+  questions.title,
+  questions.content,
+  questions.timestamp,
+  questions.edit,
+  COUNT(answers.id) AS num_answers
+FROM
+  questions
+ LEFT JOIN answers ON answers.question_id = questions.id
+GROUP BY
+answers.question_id
+ ORDER BY
+ COUNT( questions.id)
+DESC`;
   return executeDb(sql);
 }
 function getAnswerAsc() {
-  const sql = 'SELECT COUNT(id), question_id FROM answers GROUP BY question_id ORDER BY COUNT(id) ASC';
+  const sql = `SELECT
+  questions.id,
+  questions.title,
+  questions.content,
+  questions.timestamp,
+  questions.edit,
+  COUNT(answers.id) AS num_answers
+FROM
+  questions
+ LEFT JOIN answers ON answers.question_id = questions.id
+GROUP BY
+answers.question_id
+ ORDER BY
+ COUNT( questions.id)
+ASC`;
+  return executeDb(sql);
+}
+function getAnswerQuest() {
+  const sql = 'SELECT * FROM questions LEFT JOIN answers ON questions.id = answers.question_id';
   return executeDb(sql);
 }
 
@@ -62,4 +94,5 @@ module.exports = {
   getQuestDesc,
   getAnswerDesc,
   getAnswerAsc,
+  getAnswerQuest,
 };
