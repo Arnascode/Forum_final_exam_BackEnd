@@ -7,9 +7,6 @@ function getQuestDB() {
 }
 
 function getQuestAsc() {
-  // const sql = 'SELECT COUNT (*) FROM questions GROUP BY MINUTE(edit)';
-  // const sql = 'SELECT date(timestamp, %i) count(1) FROM questions GROUP BY 1';
-  // const sql = 'SELECT COUNT(edit)content FROM questions GROUP BY edit ORDER BY COUNT(edit) DESC';
   const sql = 'SELECT * FROM questions ORDER BY edit ASC';
   return executeDb(sql);
 }

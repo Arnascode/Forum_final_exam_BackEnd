@@ -14,7 +14,6 @@ const {
 
 async function addAnswer(req, res) {
   const { answer } = req.body;
-  //  , user_id
   const idFromToken = req.userId;
   try {
     const { id } = req.params;
@@ -43,7 +42,6 @@ async function showAnswer(req, res) {
 
 async function addQuest(req, res) {
   const { title, content } = req.body;
-  //  , user_id
   const idfromToken = req.userId;
   try {
     const saveResult = await saveQuest(title, content, idfromToken);
