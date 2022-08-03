@@ -6,6 +6,58 @@ function getQuestDB() {
   return executeDb(sql);
 }
 
+function getQuestAsc() {
+  // const sql = 'SELECT COUNT (*) FROM questions GROUP BY MINUTE(edit)';
+  // const sql = 'SELECT date(timestamp, %i) count(1) FROM questions GROUP BY 1';
+  // const sql = 'SELECT COUNT(edit)content FROM questions GROUP BY edit ORDER BY COUNT(edit) DESC';
+  const sql = 'SELECT * FROM questions ORDER BY edit ASC';
+  return executeDb(sql);
+}
+function getQuestDesc() {
+  const sql = 'SELECT * FROM questions ORDER BY edit DESC';
+  return executeDb(sql);
+}
+function getAnswerDesc() {
+  const sql = `SELECT
+  questions.id,
+  questions.title,
+  questions.content,
+  questions.timestamp,
+  questions.edit,
+  COUNT(answers.id) AS num_answers
+FROM
+  questions
+ LEFT JOIN answers ON answers.question_id = questions.id
+GROUP BY
+answers.question_id
+ ORDER BY
+ COUNT( questions.id)
+DESC`;
+  return executeDb(sql);
+}
+function getAnswerAsc() {
+  const sql = `SELECT
+  questions.id,
+  questions.title,
+  questions.content,
+  questions.timestamp,
+  questions.edit,
+  COUNT(answers.id) AS num_answers
+FROM
+  questions
+ LEFT JOIN answers ON answers.question_id = questions.id
+GROUP BY
+answers.question_id
+ ORDER BY
+ COUNT( questions.id)
+ASC`;
+  return executeDb(sql);
+}
+function getAnswerQuest() {
+  const sql = 'SELECT * FROM questions LEFT JOIN answers ON questions.id = answers.question_id';
+  return executeDb(sql);
+}
+
 function saveQuest(title, content, user_id) {
   const sql = 'INSERT INTO questions (title, content, user_id ) VALUES (?, ?, ?)';
   return executeDb(sql, [title, content, user_id]);
@@ -22,9 +74,6 @@ function delQuest(id) {
 }
 
 function getAnswerDB(id) {
-  // const sql = 'SELECT answers.answ
-  // er FROM answers LEFT JOIN questions ON answers.question_id = questions.id';
-  // const sql1 = 'SELECT * FROM answers AND questions WHERE questions.id  = answers.question_id';
   const sql = `SELECT * FROM answers WHERE question_id=${id.id} `;
   return executeDb(sql, [id]);
 }
@@ -41,4 +90,9 @@ module.exports = {
   delQuest,
   saveAnswer,
   getAnswerDB,
+  getQuestAsc,
+  getQuestDesc,
+  getAnswerDesc,
+  getAnswerAsc,
+  getAnswerQuest,
 };

@@ -9,6 +9,16 @@ questRoutes.post('/question', validateToken, validateQuest, controller.addQuest)
 
 questRoutes.get('/question', controller.showQuest);
 
+questRoutes.get('/questionasc', controller.showQuestAsc);
+
+questRoutes.get('/questiondesc', controller.showQuestDesc);
+
+questRoutes.get('/answerdesc', controller.showAnswerDesc);
+
+questRoutes.get('/answerasc', controller.showAnswerAsc);
+
+questRoutes.get('/answerquest', controller.showAnswerAsc);
+
 questRoutes.patch('/question/:id', validateToken, validateQuest, controller.changeQuest);
 
 questRoutes.delete('/question/:id', validateToken, controller.deleteQuest);

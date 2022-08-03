@@ -6,6 +6,10 @@ const {
   delQuest,
   saveAnswer,
   getAnswerDB,
+  getQuestAsc,
+  getQuestDesc,
+  getAnswerDesc,
+  getAnswerAsc,
 } = require('../model/questionModel');
 
 async function addAnswer(req, res) {
@@ -93,6 +97,42 @@ async function showQuest(req, res) {
     res.sendStatus(500);
   }
 }
+async function showQuestAsc(req, res) {
+  try {
+    const artArr = await getQuestAsc();
+    res.json(artArr);
+  } catch (error) {
+    console.log('questRoutes error ===', error);
+    res.sendStatus(500);
+  }
+}
+async function showQuestDesc(req, res) {
+  try {
+    const artArr = await getQuestDesc();
+    res.json(artArr);
+  } catch (error) {
+    console.log('questRoutes error ===', error);
+    res.sendStatus(500);
+  }
+}
+async function showAnswerDesc(req, res) {
+  try {
+    const artArr = await getAnswerDesc();
+    res.json(artArr);
+  } catch (error) {
+    console.log('questRoutes error ===', error);
+    res.sendStatus(500);
+  }
+}
+async function showAnswerAsc(req, res) {
+  try {
+    const artArr = await getAnswerAsc();
+    res.json(artArr);
+  } catch (error) {
+    console.log('questRoutes error ===', error);
+    res.sendStatus(500);
+  }
+}
 
 module.exports = {
   addQuest,
@@ -101,4 +141,8 @@ module.exports = {
   deleteQuest,
   addAnswer,
   showAnswer,
+  showQuestDesc,
+  showQuestAsc,
+  showAnswerDesc,
+  showAnswerAsc,
 };
